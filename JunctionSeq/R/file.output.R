@@ -263,9 +263,9 @@ JunctionSeqHTML <- function(jscs,
         paste0(truncateAggregateGene(mainTable$geneName),"-");
       } 
        
-       mainTable$geneID   <- gsub("+","&#8203;+&#8203;",mainTable$geneID,fixed=TRUE);
+       mainTable$geneID   <- gsub("+","+&#8203;",mainTable$geneID,fixed=TRUE);
        if(! is.null(mainTable$geneName)){
-         mainTable$geneName <- gsub("+","&#8203;+&#8203;",mainTable$geneName,fixed=TRUE)
+         mainTable$geneName <- gsub("+","+&#8203;",mainTable$geneName,fixed=TRUE)
          if(all(mainTable$geneID == mainTable$geneName)){
            mainTableMeta <- mainTableMeta[colnames(mainTable) != "geneName"]
            mainTable <- mainTable[,colnames(mainTable) != "geneName"]
