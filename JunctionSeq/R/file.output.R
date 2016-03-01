@@ -464,7 +464,6 @@ makeGeneWiseTable <- function(jscs, gene.list, FDR.threshold = 0.05, verbose = T
        noGenes <- (length(gene.list) == 0)
        
        if(! noGenes){
-         geneData <- jscs@flatGffGeneData
          geneAnno <- as.data.frame(t(sapply(gene.list, function(g){
            geneRows <- which(fData(jscs)$geneID == g)
            c(jscs@flatGffGeneData$gene_name[jscs@flatGffGeneData$geneID == g],
